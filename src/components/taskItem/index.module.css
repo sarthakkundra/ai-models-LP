@@ -1,0 +1,65 @@
+.strikeThrough {
+  position: relative;
+  display: inline-block;
+}
+
+.strikeThrough::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  border-top: 2px solid #9681ff; /* Adjust the color as needed */
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease-in-out;
+}
+
+.strikeThrough.animate::after {
+  transform: scaleX(1);
+}
+/* Custom checkbox styles */
+.customCheckbox {
+  display: inline-block;
+  width: 20px; /* Size of the checkbox */
+  height: 20px;
+  border: 2px solid #ccc;
+  border-radius: 4px; /* Rounded corners */
+  position: relative;
+  cursor: pointer;
+}
+
+.customCheckbox input[type="checkbox"] {
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  cursor: pointer;
+}
+
+/* Background color change on checked */
+.customCheckbox input[type="checkbox"]:checked + .checkboxBg {
+  background-color: #754fff;
+  display: block;
+}
+
+.checkboxBg {
+  width: 100%;
+  height: 100%;
+  border-radius: 2px;
+}
+
+/* Optional: Custom checkmark style */
+.customCheckbox input[type="checkbox"]:checked + .checkboxBg::after {
+  content: '';
+  position: absolute;
+  left: 6px;
+  top: 2px;
+  width: 6px;
+  height: 11px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+
