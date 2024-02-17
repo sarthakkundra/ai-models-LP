@@ -1,21 +1,17 @@
 import { useState } from "react";
-import style from "./index.module.css";
+import styles from "./index.module.css";
 
 interface IComponentProps {
 	task: string;
+	css?: any;
 }
-const TaskItem: React.FC<IComponentProps> = ({ task }) => {
+const TaskItem: React.FC<IComponentProps> = ({ task, css }) => {
+	const style = css ? css : styles;
+
 	const [isChecked, setIsChecked] = useState(false);
 
 	return (
 		<label className='flex items-center space-x-2 my-2'>
-			{/* <input
-				type='checkbox'
-				id='toggleStrikeThrough'
-				onChange={() => setIsChecked((s) => !s)}
-				className='cursor-pointer'
-			/> */}
-
 			<div className={`${style.customCheckbox}`}>
 				<input
 					type='checkbox'
