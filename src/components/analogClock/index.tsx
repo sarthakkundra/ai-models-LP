@@ -1,6 +1,7 @@
 import React from "react";
 import Draggable from "react-draggable";
 import AnalogClock from "analog-clock-react";
+import ClockBg from "../../assets/clock-bg.svg";
 
 const options = {
 	width: "140px",
@@ -19,11 +20,14 @@ const options = {
 const AnalogClockWrapper = () => {
 	return (
 		// <div draggable='true' className='cursor-move'>
-		<Draggable>
-			<div className='cursor-move'>
-				<AnalogClock {...options} />
-			</div>
-		</Draggable>
+		<>
+			<img src={ClockBg} className='absolute' />
+			<Draggable>
+				<div className='cursor-move'>
+					<AnalogClock {...options} />
+				</div>
+			</Draggable>
+		</>
 		// {/* </div> */}
 	);
 };
