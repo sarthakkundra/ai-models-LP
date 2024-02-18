@@ -3,7 +3,7 @@ import AnalogClockWrapper from "../../analogClock";
 
 const Clock = () => {
 	return (
-		<section className='bg-[#7ac3f6] min-w-[10%] min-h-[70vh]'>
+		<section className='bg-[#7ac3f6] max-w-[268px] min-h-[70vh]'>
 			<AnalogClockWrapper />
 		</section>
 	);

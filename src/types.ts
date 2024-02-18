@@ -4,4 +4,5 @@ export type TModelData = {
 	license: string;
 	contributors: string;
 	rating: number;
+	description: string;
 };

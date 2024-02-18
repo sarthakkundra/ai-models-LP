@@ -6,8 +6,8 @@ import Footer from "./footer";
 
 const Layout = () => {
 	return (
-		<section className='max-h-[100vh]'>
-			<div className='flex gap-x-2'>
+		<section className='max-h-[100vh] overflow-hidden'>
+			<div className='flex'>
 				<TaskList />
 				<Models />
 				<Clock />

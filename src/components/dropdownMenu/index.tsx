@@ -1,8 +1,18 @@
 import { useEffect, useState, useRef } from "react";
 import Menu from "../menu";
 import { dropdownMenuFilters } from "../../data";
+import TaskItem from "../taskItem";
+import WhiteChevron from "../../assets/white-chevron.svg";
 
-const DropdownMenu = () => {
+interface IComponentProps {
+	heading: string;
+	isPrimaryDropdown?: boolean;
+}
+
+const DropdownMenu: React.FC<IComponentProps> = ({
+	heading,
+	isPrimaryDropdown,
+}) => {
 	const dropdownRef = useRef(null);
 	const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -44,28 +54,42 @@ const DropdownMenu = () => {
 		<div className='relative inline-block text-left' ref={dropdownRef}>
 			<button
 				onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-				className='px-4 py-2 bg-blue-500 text-white rounded focus:outline-none'>
-				Toggle Dropdown
+				className={`bg-[#17171A] text-white focus:outline-none rounded-xl flex justify-start items-center ${
+					isPrimaryDropdown ? "py-5 px-6" : "py-2 px-3"
+				}`}>
+				{heading}
+				<img
+					src={WhiteChevron}
+					className={`transition-all duration-500 ease-out ${
+						isDropdownOpen ? " rotate-180" : "rotate-0"
+					}
+					${isPrimaryDropdown ? "ml-[200px]" : "ml-[5px]"}
+					`}
+				/>
 			</button>
-			{isDropdownOpen && (
-				<div className='absolute mt-2 w-48 rounded-md shadow-lg bg-white z-50'>
-					<a
-						href='#'
-						className='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100'>
-						Item 1
-					</a>
-					<a
-						href='#'
-						className='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100'>
-						Item 2
-					</a>
-					<a
-						href='#'
-						className='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100'>
-						Item 3
-					</a>
-				</div>
-			)}
+			{/* {isDropdownOpen && ( */}
+			<div
+				className='absolute mt-2 w-48 rounded-md shadow-lg bg-[#17171A] z-50 transition-opacity duration-500 ease-out'
+				style={
+					isDropdownOpen
+						? {
+								height: "auto",
+								display: "block",
+								opacity: "100",
+								animation: "fadeIn 300ms ease-out forwards",
+						  }
+						: {
+								height: "0",
+								display: "none",
+								opacity: "0",
+								animation: "fadeIn 300ms ease-out forwards",
+						  }
+				}>
+				{dropdownMenuFilters?.map((filter) => (
+					<TaskItem task={filter} />
+				))}
+			</div>
+			{/* )} */}
 		</div>
 	);
 };

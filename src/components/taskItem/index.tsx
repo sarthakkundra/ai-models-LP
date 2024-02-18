@@ -4,8 +4,9 @@ import style from "./index.module.css";
 interface IComponentProps {
 	task: string;
 	css?: any;
+	shouldStrikethrough?: boolean;
 }
-const TaskItem: React.FC<IComponentProps> = ({ task, css }) => {
+const TaskItem: React.FC<IComponentProps> = ({ task, shouldStrikethrough }) => {
 	// const style = css ? css : styles;
 
 	const [isChecked, setIsChecked] = useState(false);
@@ -23,10 +24,11 @@ const TaskItem: React.FC<IComponentProps> = ({ task, css }) => {
 			</div>
 			<span
 				className={`${
-					style.strikeThrough
+					shouldStrikethrough ? style.strikeThrough : null
 				} transition-colors duration-1000 font-extralight text-white ${
 					isChecked ? `${style.animate} text-[#754FFF]` : ""
-				}`}>
+				}`}
+				style={isChecked && shouldStrikethrough ? { color: "#754FFF" } : {}}>
 				{task}
 			</span>
 		</label>
