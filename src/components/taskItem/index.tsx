@@ -1,12 +1,12 @@
 import { useState } from "react";
-import styles from "./index.module.css";
+import style from "./index.module.css";
 
 interface IComponentProps {
 	task: string;
 	css?: any;
 }
 const TaskItem: React.FC<IComponentProps> = ({ task, css }) => {
-	const style = css ? css : styles;
+	// const style = css ? css : styles;
 
 	const [isChecked, setIsChecked] = useState(false);
 
