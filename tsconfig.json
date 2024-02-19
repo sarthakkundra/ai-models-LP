@@ -20,6 +20,7 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"],
+  // removing "src" from here because clock library has no types
+  "include": [],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

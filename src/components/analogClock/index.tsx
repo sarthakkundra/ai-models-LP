@@ -1,4 +1,4 @@
-import React from "react";
+// @ts-ignore
 import Draggable from "react-draggable";
 import AnalogClock from "analog-clock-react";
 import ClockBg from "../../assets/clock-bg.svg";

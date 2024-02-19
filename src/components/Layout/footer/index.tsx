@@ -23,11 +23,11 @@ const Footer = () => {
 					// 	setResizerPos(`${purpleGradientRef?.current?.offsetWidth}`);
 					// }}
 				>
-					<img
+					{/* <img
 						src={Resizer}
 						className={`absolute bottom-[28%] overflow-auto`}
 						// style={{ left: `${resizerPos}px` }}
-					/>
+					/> */}
 				</div>
 				<img src={Radar} className='w-[160px] h-[162px] ml-16' />
 			</div>
