@@ -8,7 +8,7 @@ import { PanelGroup, Panel, PanelResizeHandle } from "react-resizable-panels";
 const Layout = () => {
 	return (
 		<section className='max-h-[100vh] overflow-hidden'>
-			<div className='flex'>
+			<div className='flex w-[80%] justify-center m-auto'>
 				<PanelGroup autoSaveId='example' direction='horizontal'>
 					<Panel>
 						<TaskList />

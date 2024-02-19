@@ -21,9 +21,13 @@ const AnalogClockWrapper = () => {
 	return (
 		// <div draggable='true' className='cursor-move'>
 		<>
-			<img src={ClockBg} className='absolute h-[72vh]' />
-			<Draggable>
-				<div className='cursor-move mt-16'>
+			<img src={ClockBg} className='absolute h-[70vh]' />
+			<Draggable
+				axis='y'
+				bounds={{ left: 100, top: -20, right: 500, bottom: 300 }}
+				// grid={[25, 25]}
+			>
+				<div className='cursor-move mt-10'>
 					<AnalogClock {...options} />
 				</div>
 			</Draggable>

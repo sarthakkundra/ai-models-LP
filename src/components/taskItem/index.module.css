@@ -27,6 +27,7 @@
   border-radius: 4px; /* Rounded corners */
   position: relative;
   cursor: pointer;
+  margin-right: 4px;
 }
 
 .customCheckbox input[type="checkbox"] {

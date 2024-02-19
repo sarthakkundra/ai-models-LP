@@ -56,15 +56,15 @@ const ModelCard: React.FC<IComponentProps> = ({ modelData }) => {
 		<div
 			onClick={() => setIsCardExpanded((s) => !s)}
 			className='cursor-pointer'>
-			<div className='flex justify-start items-center py-8 bg-[#26252A] p-4 h-[64px]'>
+			<div className='flex justify-start items-center bg-[#26252A] transition-colors duration-300 hover:bg-[#201F23] p-8 h-[64px]'>
 				<h3 className='text-white min-w-[40%] flex'>
 					<img src={getLogoImg()} className='mr-2' />
 					{modelData.name}
 				</h3>
-				<p className='text-white px-2 py-3 mx-2 min-w-[80px]'>
+				<p className='text-white text-[14px] text-opacity-60ß px-2 py-3 mx-2 min-w-[80px]'>
 					{modelData.version}
 				</p>
-				<p className='text-white mx-2 px-2 py-3 min-w-[80px]'>
+				<p className='text-white text-[14px] text-opacity-60 mx-2 px-2 py-3 min-w-[80px]'>
 					{modelData.license}
 				</p>
 				{/* Dynamic image rendering should handle paths correctly, consider adjusting if necessary */}
@@ -77,7 +77,7 @@ const ModelCard: React.FC<IComponentProps> = ({ modelData }) => {
 				className={`transition-height duration-500 ease-in-out overflow-hidden ${
 					isCardExpanded ? "max-h-96" : "max-h-0"
 				}`}>
-				<p className='text-white text-xs p-4'>
+				<p className='text-white text-xs text-[14px] text-opacity-60 leading[24px] py-5 px-9'>
 					{isCardExpanded && modelData.description}
 				</p>
 			</div>
