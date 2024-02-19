@@ -1,4 +1,5 @@
 import React, { useState, useRef } from "react";
+import Modal from "../../modal";
 import KidInPool from "../../../assets/kid-in-pool.svg";
 import Radar from "../../../assets/radar.gif";
 import DropdownMenu from "../../dropdownMenu";
@@ -8,6 +9,7 @@ import Resizer from "../../../assets/resizer.svg";
 const Footer = () => {
 	const purpleGradientRef = useRef(null);
 	const [resizerPos, setResizerPos] = useState("0");
+	const [isModalOpen, setIsModalOpen] = useState(false);
 
 	return (
 		<footer className='w-full max-h-[224px] bg-[#212025] resize-y overflow-auto no-scrollbar flex justify-between absolute bottom-0 p-8'>
@@ -32,9 +34,10 @@ const Footer = () => {
 			<div className='flex flex-col justify-center items-start'>
 				<DropdownMenu heading='Select Item' isPrimaryDropdown />
 				<div className='flex flex-row-reverse w-full'>
-					<img src={PurpleFloater} className='mt-11 cursor-pointer' />
+					<img src={PurpleFloater} className='mt-11 cursor-pointer' onClick={() => setIsModalOpen(true)}/>
 				</div>
 			</div>
+			<Modal isOpen={isModalOpen} setIsOpen={setIsModalOpen}/>
 		</footer>
 	);
 };

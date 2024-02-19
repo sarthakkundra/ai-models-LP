@@ -6,7 +6,7 @@ import ModelList from "../../modelList";
 
 const Models = () => {
 	return (
-		<section className=' flex-1 bg-[#201F23] h-[70vh] max-w-[648px] no-scrollbar overflow-auto resize-y rounded-xl'>
+		<section className=' flex-1 bg-[#201F23] h-[69vh] max-w-[648px] no-scrollbar overflow-auto resize-y rounded-xl'>
 			<div className='sticky top-0 bg-[#201F23] px-8 pt-8 pb-4'>
 				<h3 className='text-white font-bold text-xl mb-[18px]'>AI Models</h3>
 				<div className='flex justify-start gap-x-3'>
