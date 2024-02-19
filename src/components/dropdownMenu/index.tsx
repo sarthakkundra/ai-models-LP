@@ -55,7 +55,9 @@ const DropdownMenu: React.FC<IComponentProps> = ({
 			<button
 				onClick={() => setIsDropdownOpen(!isDropdownOpen)}
 				className={`bg-[#17171A] text-white focus:outline-none rounded-xl flex justify-start items-center ${
-					isPrimaryDropdown ? "py-5 px-6" : "py-2 px-3"
+					isPrimaryDropdown
+						? "py-5 px-6 text-opacity-60 text-[20px]"
+						: "py-2 px-3 text-[13px]"
 				}`}>
 				{heading}
 				<img
@@ -63,13 +65,15 @@ const DropdownMenu: React.FC<IComponentProps> = ({
 					className={`transition-all duration-500 ease-out ${
 						isDropdownOpen ? " rotate-180" : "rotate-0"
 					}
-					${isPrimaryDropdown ? "ml-[200px]" : "ml-[5px]"}
+					${isPrimaryDropdown ? "ml-[200px] w-5" : "ml-[5px] w-[10px]"}
 					`}
 				/>
 			</button>
 			{/* {isDropdownOpen && ( */}
 			<div
-				className='absolute mt-2 w-48 rounded-md shadow-lg bg-[#17171A] z-50 transition-opacity duration-500 ease-out'
+				className={`absolute mt-2 rounded-md shadow-lg bg-[#17171A] z-50 transition-opacity duration-500 ease-out ${
+					isPrimaryDropdown ? "w-[336px]" : "w-48"
+				}`}
 				style={
 					isDropdownOpen
 						? {
