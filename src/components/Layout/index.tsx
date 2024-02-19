@@ -2,23 +2,14 @@ import TaskList from "./taskList";
 import Models from "./models";
 import Clock from "./clock";
 import Footer from "./footer";
-import { PanelGroup, Panel, PanelResizeHandle } from "react-resizable-panels";
 
 const Layout = () => {
 	return (
 		<section className='max-h-[100vh] overflow-hidden'>
-			<div className='flex w-[80%] justify-center m-auto'>
-				<PanelGroup autoSaveId='example' direction='horizontal'>
-					<Panel>
-						<TaskList />
-					</Panel>
-					<PanelResizeHandle />
-					<Panel>
-						<Models />
-					</Panel>
-					<PanelResizeHandle />
-					<Clock />
-				</PanelGroup>
+			<div className='flex justify-center py-2 gap-x-2 max-w-[80%] m-auto'>
+				<TaskList />
+				<Models />
+				<Clock />
 			</div>
 			<Footer />
 		</section>
