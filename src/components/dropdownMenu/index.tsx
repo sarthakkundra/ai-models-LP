@@ -1,5 +1,4 @@
 import { useEffect, useState, useRef } from "react";
-import Menu from "../menu";
 import { dropdownMenuFilters } from "../../data";
 import TaskItem from "../taskItem";
 import WhiteChevron from "../../assets/white-chevron.svg";
@@ -13,11 +12,11 @@ const DropdownMenu: React.FC<IComponentProps> = ({
 	heading,
 	isPrimaryDropdown,
 }) => {
-	const dropdownRef = useRef(null);
+	const dropdownRef = useRef<any>(null);
 	const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
 	useEffect(() => {
-		const handleClickOutside = (event) => {
+		const handleClickOutside = (event: any) => {
 			if (dropdownRef.current && !dropdownRef.current?.contains(event.target)) {
 				setIsDropdownOpen(false);
 			}

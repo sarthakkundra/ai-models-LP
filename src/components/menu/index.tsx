@@ -1,12 +1,10 @@
-import React from "react";
-import TaskItem from "../taskItem";
-import style from "./index.module.css";
 
-interface IComponentProps {
-	menuItems: Array<string>;
-}
 
-const Menu: React.FC<IComponentProps> = ({ menuItems }) => {
+// interface IComponentProps {
+// 	menuItems: Array<string>;
+// }
+
+const Menu = ({ }) => {
 	return (
 		// <div className='bg-red-400 max-w-fit rounded-md flex flex-col justify-center items-start'>
 		<div className='absolute right-0 mt-2 py-2 w-48 bg-red-400 rounded shadow-lg z-50'>

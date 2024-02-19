@@ -18,9 +18,14 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+
+     "typeRoots": ["./node_modules/@types", "./types"],
+     "baseUrl": ".",
+     "paths": {
+      "*": ["types/*"]
+     }
   },
-  // removing "src" from here because clock library has no types
-  "include": [],
+  "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

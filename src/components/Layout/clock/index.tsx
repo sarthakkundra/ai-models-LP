@@ -1,4 +1,3 @@
-import React from "react";
 import AnalogClockWrapper from "../../analogClock";
 import DigitalClock from "../../digitalClock";
 

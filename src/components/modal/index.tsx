@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import styles from "./index.module.css"; // Import CSS for custom animations
+import React from "react";
+import styles from "./index.module.css";
 
 interface IComponentProps {
 	isOpen: boolean;

@@ -1,14 +1,12 @@
-import React, { useState, useRef } from "react";
+import { useState, useRef } from "react";
 import Modal from "../../modal";
 import KidInPool from "../../../assets/kid-in-pool.svg";
 import Radar from "../../../assets/radar.gif";
 import DropdownMenu from "../../dropdownMenu";
 import PurpleFloater from "../../../assets/purple-floater.svg";
-import Resizer from "../../../assets/resizer.svg";
 
 const Footer = () => {
-	const purpleGradientRef = useRef(null);
-	const [resizerPos, setResizerPos] = useState("0");
+	const purpleGradientRef = useRef(null)
 	const [isModalOpen, setIsModalOpen] = useState(false);
 
 	return (

@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 const DigitalClock = () => {
 	const [time, setTime] = useState<string>("00:00");
 
 	const updateTime = () => {
 		const time = new Date();
-		let hour = time.getHours();
-		let mins = time.getMinutes();
+		let hour: string | number = time.getHours();
+		let mins: string | number = time.getMinutes();
 		let am_pm = "AM";
 
 		if (hour >= 12) {

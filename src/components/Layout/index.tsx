@@ -1,4 +1,3 @@
-import React from "react";
 import TaskList from "./taskList";
 import Models from "./models";
 import Clock from "./clock";

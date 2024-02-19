@@ -1,7 +1,4 @@
-import React from "react";
 import DropdownMenu from "../../dropdownMenu";
-import ModelCard from "../../modelCard";
-import { modelsData } from "../../../data";
 import ModelList from "../../modelList";
 
 const Models = () => {
